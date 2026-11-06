@@ -15,9 +15,14 @@ function generate() {
 
   if (!prompt) {
     notice.innerText = "請先輸入你的創作描述。";
-  } else if (selectedTool === "AI 圖片生成") {
-    notice.innerText = handleImageGeneration(prompt);
-  } else {
+  }} else if (selectedTool === "AI 圖片生成") {
+  notice.innerText = handleImageGeneration(prompt);
+} else if (selectedTool === "文字轉影片") {
+  notice.innerText = handleVideoGeneration(prompt);
+} else {
+  notice.innerText =
+    "已建立創作需求！目前尚未連接真正的 AI 生成服務。";
+} {
     notice.innerText =
       "已建立創作需求！目前尚未連接真正的 AI 生成服務。";
   }
