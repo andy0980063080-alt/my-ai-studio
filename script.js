@@ -9,16 +9,14 @@ function openTool(name, desc) {
   document.getElementById("modal").style.display = "flex";
 }
 
-function closeTool() {
-  document.getElementById("modal").style.display = "none";
-}
-
 function generate() {
   const prompt = document.getElementById("prompt").value.trim();
   const notice = document.getElementById("notice");
 
   if (!prompt) {
     notice.innerText = "請先輸入你的創作描述。";
+  } else if (selectedTool === "AI 圖片生成") {
+    notice.innerText = handleImageGeneration(prompt);
   } else {
     notice.innerText =
       "已建立創作需求！目前尚未連接真正的 AI 生成服務。";
